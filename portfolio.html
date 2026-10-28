@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharon Melody Esther S | Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Container Layout */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .hero p.tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .contact-pills {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            display: inline-block;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .pill:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card-subtitle {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .card-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin: 3px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none;
+            }
+            .card-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Sharon Melody Esther S</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <h1>Sharon Melody Esther S</h1>
+            <p class="tagline">Aspiring IT Professional & Frontend Developer</p>
+            <div class="contact-pills">
+                <a href="mailto:sharonmelody24@gmail.com" class="pill">📧 sharonmelody24@gmail.com</a>
+                <a href="tel:7812867797" class="pill">📞 7812867797</a>
+                <span class="pill">📍 Tamil Nadu, India</span>
+            </div>
+            <div style="margin-top: 25px; text-align: left;" class="card">
+                <p>Enthusiastic fresher with a strong academic background and interest in technology-driven solutions. Quick learner with good analytical thinking, communication, and teamwork abilities. Looking for opportunities to apply knowledge and grow professionally in the IT industry.</p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Master of Computer Applications (MCA)</span>
+                    <span class="card-date">2025 – 2027</span>
+                </div>
+                <div class="card-subtitle">S.A. Engineering College</div>
+                <p style="margin-top: 5px; color: var(--text-muted);">CGPA: 7.92</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Bachelor of Computer Science (BCA)</span>
+                    <span class="card-date">2022 – 2025</span>
+                </div>
+                <div class="card-subtitle">S.A. College of Arts and Science</div>
+                <p style="margin-top: 5px; color: var(--text-muted);">Percentage: 78.16%</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">HSC (12th Grade)</span>
+                    <span class="card-date">2021 – 2022</span>
+                </div>
+                <div class="card-subtitle">ABS Vidhya Mandhir</div>
+                <p style="margin-top: 5px; color: var(--text-muted);">Percentage: 76.5%</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">SSLC (10th Grade)</span>
+                    <span class="card-date">2019 – 2020</span>
+                </div>
+                <div class="card-subtitle">ABS Vidhya Mandhir</div>
+                <p style="margin-top: 5px; color: var(--text-muted);">Percentage: 80.3%</p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Frontend Developer Intern</span>
+                    <span class="card-date">June 2026 – July 2026</span>
+                </div>
+                <div class="card-subtitle">Codetech IT Solutions</div>
+                <ul style="padding-left: 20px; margin-top: 10px; color: var(--text-main);">
+                    <li>Developed responsive and user-friendly web interface components.</li>
+                    <li>Collaborated on front-end features using standard web technologies.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">SACAS Weblet</span>
+                </div>
+                <p style="margin-top: 5px;">A comprehensive academic web application built for the college campus containing educational resources, past paper archives, and interactive features.</p>
+                <ul style="padding-left: 20px; margin-top: 10px; color: var(--text-muted);">
+                    <li>Includes study notes, previous year question papers, assessments, quizzes, and aptitude tests.</li>
+                    <li>Integrated teacher portal for real-time syllabus and resource updates.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills & Certifications Section -->
+        <section id="skills">
+            <h2>Skills & Certifications</h2>
+            <div class="skills-grid">
+                <div class="card">
+                    <h3 style="font-size: 1rem; margin-bottom: 10px;">Technical Skills</h3>
+                    <div>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">HTML / CSS</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 style="font-size: 1rem; margin-bottom: 10px;">Core Competencies</h3>
+                    <div>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Adaptability</span>
+                    </div>
+                </div>
+
+                <div class="card" style="grid-column: 1 / -1;">
+                    <h3 style="font-size: 1rem; margin-bottom: 10px;">Certifications</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>Cloud Computing (2026)</li>
+                        <li>Python Certificate – STEM Training Solutions (2024)</li>
+                        <li>NPTEL: Java Certification (2023)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Sharon Melody Esther S. Built with pure HTML & CSS.</p>
+    </footer>
+
+</body>
+</html> 

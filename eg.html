@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>operations</title>
+    </head>
+<body>
+    <h2>Numbers are:<span id="numbers">5 and 10</span></h2>
+    <h2>Answer is:<span id="answer"></span></h2>
+    <button onClick="Add()">addition</button>
+    <button onClick="subtraction()">Subtraction</button>
+    <button onClick="Multiplication()">Multiply</button>
+    <button onClick="Division()">Divide</button>
+    <script>
+        let a=5;
+        let b=10;
+        let answer=0;
+        function Add(){
+            answer=a+b;
+            document.getElementById("answer").innerText=answer;
+        }
+        function subtraction(){
+            answer=a-b;
+            document.getElementById("answer").innerText=answer;
+        }
+        function Multiplication(){
+            answer=a*b;
+            document.getElementById("answer").innerText=answer;
+        }
+        function Division(){
+            answer=a/b;
+            document.getElementById("answer").innerText=answer;
+        }
+    </script>
+</body>
+</html>
+        
