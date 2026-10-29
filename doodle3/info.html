@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Qualifications</title>
+</head>
+<body>
+
+    <h2>Educational Qualifications</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Degree</th>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>percentage/CGPA</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        const educationData = [
+            { 
+                course: "Master of Computer Applications (MCA)", 
+                institution: "S.A. Engineering College", 
+                duration: "2025 – 2027", 
+                score: "7.92 CGPA", 
+                type: "College" 
+            },
+            { 
+                course: "Bachelor of Computer Applications (BCA)", 
+                institution: "S.A. College of Arts and Science", 
+                duration: "2022 – 2025", 
+                score: "78.16%", 
+                type: "College" 
+            },
+            { 
+                course: "Higher Secondary Certificate (HSC)", 
+                institution: "ABS Vidhya Mandhir", 
+                duration: "2022", 
+                score: "76.5%", 
+                type: "School" 
+            },
+            { 
+                course: "Secondary School Leaving Certificate (SSLC)", 
+                institution: "ABS Vidhya Mandhir", 
+                duration: "2020", 
+                score: "80.3%", 
+                type: "School" 
+            }
+        ];
+
+        const tableBody = document.getElementById("table-body");
+        function renderTable(data) {
+            const rowsHTML = data.map(item => {
+                return `
+                    <tr>
+                        <td>${item.course}</td>
+                        <td>${item.institution}</td>
+                        <td>${item.duration}</td>
+                        <td>${item.score}</td>
+                        <td>${item.type}</td>
+                    </tr>
+                `;
+            }).join(""); 
+            tableBody.innerHTML = rowsHTML;
+        }
+
+        renderTable(educationData);
+        filterSelect.addEventListener("change", (e) => {
+            const selectedValue = e.target.value;
+
+            let filteredData;
+            if (selectedValue === "all") {
+                filteredData = educationData;
+            } else {
+                filteredData = educationData.filter(item => item.type === selectedValue);
+            }
+
+            renderTable(filteredData);
+        }); 
+    </script>
+
+</body>
+</html>

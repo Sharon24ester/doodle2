@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Sharon Melody Esther S</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px auto;
+            color: #333;
+            line-height: 1.6;
+            max-width: 850px;
+            background-color: #fcfcfc;
+            padding: 20px;
+        }
+
+        /* Header Accent with Flexbox to place photo on the right */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #2c3e50;
+            margin-left: 20px;
+        }
+
+        h1 {
+            color: #1a365d;
+            margin: 0 0 6px 0;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .contact-info span {
+            color: #2b6cb0;
+        }
+
+        .section {
+            margin-bottom: 28px;
+        }
+
+        /* Section Headings with Color */
+        h2 {
+            color: #2c3e50;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+
+        /* Internship Block */
+        .internship-card {
+            background-color: #ffffff;
+            border-left: 4px solid #3182ce;
+            border-top: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 14px 18px;
+            border-radius: 0 4px 4px 0;
+            margin-top: 10px;
+        }
+
+        .role-title {
+            font-weight: bold;
+            color: #2d3748;
+            font-size: 15px;
+        }
+
+        .company-name {
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        .duration-badge {
+            display: inline-block;
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" class="header-container"></div>
+
+    <!-- Objective / About Me -->
+    <div class="section">
+        <h2>About Me</h2>
+        <p id="about-text"></p>
+    </div>
+    <div class="section">
+        <h2>Education</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Degree / Course</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="education-table-body"></tbody>
+        </table>
+    </div>
+    <div class="section">
+        <h2>Internship Experience</h2>
+        <div id="internship-list"></div>
+    </div>
+
+    <!-- Skills Section (Table) -->
+    <div class="section">
+        <h2>Skills</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Skill</th>
+                </tr>
+            </thead>
+            <tbody id="skills-table-body"></tbody>
+        </table>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="section">
+        <h2>Certifications</h2>
+        <ul id="certifications-list"></ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section">
+        <h2>Contact</h2>
+        <div id="contact-section"></div>
+    </div>
+
+    <script>
+        const profile = {
+            name: "SHARON MELODY ESTHER S",
+            phone: "7812867797",
+            email: "sharonmelody24@gmail.com",
+            github: "https://github.com/Sharon24ester",
+            about: "Enthusiastic fresher with a strong academic background and interest in technology-driven solutions. Quick learner with good analytical thinking, communication, and teamwork abilities.",
+            photo: "passport.png"
+        };
+
+        const educationData = [
+            { degree: "Master Of Computer Applications (MCA)", institution: "S. A. Engineering College", year: "2025 - 2027", score: "CGPA: 7.92", active: true },
+            { degree: "Bachelor of Computer Applications (BCA)", institution: "S. A. College of Arts and Science", year: "2022 - 2025", score: "78.16%", active: true },
+            { degree: "HSC (12th)", institution: "ABS Vidhya Mandhir", year: "2021 - 2022", score: "76.5%", active: true },
+            { degree: "SSLC (10th)", institution: "ABS Vidhya Mandhir", year: "2019 - 2020", score: "80.3%", active: true }
+        ];
+
+        const experienceData = [
+            {
+                role: "Frontend Developer Intern",
+                company: "CodeTech IT Solutions",
+                duration: "1 Month (June 2026 - July 2026)",
+                description: "Worked on client-side web technology development using JavaScript array manipulation techniques including innerHTML, map(), and filter().",
+                type: "internship"
+            }
+        ];
+
+        const skillsData = [
+            { name: "Python, Java", category: "Programming Languages" },
+            { name: "MySQL, MongoDB", category: "Databases" },
+            { name: "HTML5, CSS3, JavaScript", category: "Frontend Development" },
+            { name: "Node.js, Express.js", category: "Backend Development" },
+            { name: "Good Communication & Presentation", category: "Soft Skills" },
+            { name: "Team Management & Leadership", category: "Soft Skills" }
+        ];
+
+        const certificationsData = [
+            "Cloud Computing (2026)",
+            "Python Certificate from STEM Training Solutions (2024)",
+            "NPTEL: Java (2023)"
+        ];
+
+        document.getElementById("header").innerHTML = `
+            <div>
+                <h1>${profile.name}</h1>
+                <div class="contact-info">
+                    Email: <span>${profile.email}</span> | Phone: <span>${profile.phone}</span>
+                </div>
+            </div>
+            <div>
+                <img src="${profile.photo}" alt="${profile.name}" class="profile-img">
+            </div>
+        `;
+        document.getElementById("about-text").innerHTML = profile.about;
+
+        document.getElementById("education-table-body").innerHTML = educationData
+            .filter(edu => edu.active)
+            .map(edu => `
+                <tr>
+                    <td><strong>${edu.degree}</strong></td>
+                    <td>${edu.institution}</td>
+                    <td>${edu.year}</td>
+                    <td><strong>${edu.score}</strong></td>
+                </tr>
+            `).join('');
+
+        const internships = experienceData.filter(exp => exp.type === 'internship');
+        document.getElementById("internship-list").innerHTML = internships.map(item => `
+            <div class="internship-card">
+                <div class="role-title">${item.role} — <span class="company-name">${item.company}</span></div>
+                <div class="duration-badge">${item.duration}</div>
+                <p style="margin: 0; font-size: 14px; color: #4a5568;">${item.description}</p>
+            </div>
+        `).join('');
+
+        document.getElementById("skills-table-body").innerHTML = skillsData
+            .map(skill => `
+                <tr>
+                    <td style="width: 35%;"><strong>${skill.category}</strong></td>
+                    <td>${skill.name}</td>
+                </tr>
+            `).join('');
+
+        document.getElementById("certifications-list").innerHTML = certificationsData
+            .map(cert => `<li>${cert}</li>`)
+            .join('');
+        document.getElementById("contact-section").innerHTML = `
+            <p><strong>Name:</strong> ${profile.name}</p>
+            <p><strong>Phone Number:</strong> ${profile.phone}</p>
+            <p><strong>Email:</strong> <a href="mailto:${profile.email}">${profile.email}</a></p>
+            <p><strong>GitHub:</strong> <a href="${profile.github}" target="_blank">${profile.github}</a></p>
+        `;
+    </script>
+</body>
+</html>
